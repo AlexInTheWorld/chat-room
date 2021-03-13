@@ -1,0 +1,25 @@
+html
+  head
+    title FCC Advanced Node and Express
+    meta(name='description', content='Home page')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/public/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  body
+    h1.title -- Chat Room Project --
+    h4.center It seems a fine day to start a new conversation!
+    p.show-connection.center #{title}
+    p.center#pug-variable=message    
+    |
+    div(class="container")
+      div(class="row align-items-center")
+        div(class="col-sm d-flex justify-content-center")
+          div(class="container d-flex justify-content-center px-md-5")
+            div(class="col-6 p-3")
+              a(class="btn btn-sm btn-primary btn-block" href="/login" role="button") Let me in!
+        div(class="col-sm d-flex justify-content-center")
+          div(class="container d-flex justify-content-center px-md-5")
+            div(class="col-6 p-3")
+              a(class="btn btn-sm btn-primary btn-block" href="/register" role="button") New user

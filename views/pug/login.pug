@@ -1,0 +1,39 @@
+html
+  head
+    title FCC Advanced Node and Express
+    meta(name='description', content='Login Form')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/public/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  body
+    h1.center -- Chat Room Project: Login --
+    h2.center#welcome Welcome back!
+    h3.center Login Form
+    hr
+    form(action='/login', method='post', onsubmit='disable_submit()').center
+      div.form-group
+        label(for='username') Username:
+        input(type='text', class='form-control', name='username', id='username', placeholder="type your username")
+      div.form-group
+        label(for='password') Password:
+        input(type='password', name='password', id='password', class='form-control', placeholder='type your password')
+      div#login-container
+        input(type='submit', value='Log In', id='submit_btn', class='submit-active')
+    if message
+      div(class='alert alert-danger border border-danger rounded-pill warning-button' role='alert') #{message}
+    hr
+    h2.center Social Login
+      .login.center
+        a(href='/auth/github', id='login_link', aria-disabled="false" onclick='disable_submit()').text Login with Github!
+    hr
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+  <script>
+  | function disable_submit() {
+  |   let attr_disabled = document.createAttribute("disabled");
+  |   let input_submit = document.getElementById("submit_btn");
+  |   input_submit.setAttributeNode(attr_disabled);
+  |   $("#submit_btn").toggleClass("submit-active");
+  | }
+  </script>
